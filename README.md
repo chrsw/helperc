@@ -1,2 +1,3 @@
 # helperc
-Helpful and useful C snippets, functions, programs, etc
+C snippets, functions, programs, etc that I find helpful and useful
+
