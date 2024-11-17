@@ -7,7 +7,7 @@
  *      Details
  * Inspired by:
  *      https://github.com/pabr/leansdr/blob/master/src/apps/leandvb.cc
- *      GPL Licenced
+ *      GPL Licensed
  *
  * Parameters:
  *      Command name
@@ -15,8 +15,11 @@
  *      Error code 
  *      Information string
  *
- * Buiding:
+ * Building:
  *	gcc -c -o usage usage.c
+ *
+ * TODO:
+ *  Generate the data for usage() using preprocessor macros.
  */
 
 #include <stdio.h>
