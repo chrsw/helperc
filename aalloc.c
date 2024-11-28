@@ -1,9 +1,9 @@
-// argalloc: allocate space for command line arguments
+// aalloc: allocate space for command line arguments
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "argalloc.h"
+#include "aalloc.h"
 
 char **aal_gp;
 
