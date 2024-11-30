@@ -36,7 +36,7 @@ int aalloc(int argc, char *argv[]) {
     int n = argc;
     char *aal_new;
 
-    aal_gp = malloc(argc);
+    aal_gp = malloc((argc)*sizeof(char *));
 
     do {
         aal_gp[argc-1] = malloc(sizeof(argv[argc-1]+1));
