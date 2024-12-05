@@ -1,6 +1,7 @@
 // randomize: generate a random list of numbers
 //
 // $ gcc -o randomize randomize.c
+// _buildcmd: gcc -o randomize randomize.c
 //
 
 #include <stdio.h>
