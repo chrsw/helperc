@@ -1,5 +1,6 @@
 // randomize: generate a random list of numbers
 //
+// $ gcc -o randomize randomize.c
 //
 
 #include <stdio.h>
@@ -34,7 +35,7 @@ int main(int argc, char *argv[]) {
 }
 
 
-// randomize:  generate a list of random numbers from 1 to n
+// randomize:  generate random numbers from 1 to n, each number used once
 int *randomize(int n) {
 
     int *list = NULL;
