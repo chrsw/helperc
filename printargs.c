@@ -1,4 +1,5 @@
 // printargs:  print command and command line args
+// _buildcmd: gcc -o printargs printargs.c aalloc.c
 //
 // Build:
 // $ gcc -o printargs printargs.c aalloc.c
