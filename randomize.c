@@ -1,7 +1,8 @@
 // randomize: generate a random list of numbers
 //
-// $ gcc -o randomize randomize.c
-// _buildcmd: gcc -o randomize randomize.c
+// $ gcc -DRANDOMIZE_MAIN -o randomize randomize.c
+// $ gcc -c randomize.c
+// _buildcmd: gcc -DRANDOMIZE_MAIN -o randomize randomize.c
 //
 
 #include <stdio.h>
@@ -15,7 +16,7 @@
 int *randomize(int n);
 static bool _check(int *flags, int n, int r);
 
-
+#ifdef RANDOMIZE_MAIN
 int main(int argc, char *argv[]) {
 
     int *rand_array = NULL;
@@ -34,6 +35,7 @@ int main(int argc, char *argv[]) {
     } else
         return 1;
 }
+#endif  // RANDOMIZE_MAIN
 
 
 // randomize:  generate random numbers from 1 to n, each number used once
