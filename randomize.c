@@ -11,9 +11,9 @@
 #include <time.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include "randomize.h"
 
 
-int *randomize(int n);
 static bool _check(int *flags, int n, int r);
 
 #ifdef RANDOMIZE_MAIN
