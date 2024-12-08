@@ -1,7 +1,12 @@
 // randomize: generate a random list of numbers
 //
-// $ gcc -DRANDOMIZE_MAIN -o randomize randomize.c
-// $ gcc -c randomize.c
+// Details:
+//  Store a list of integers in a heap array in random order. Provided so
+//  other applications can easily randomize a list. main() provides a simple
+//  usage example and doesn't have to be included.
+// Build:
+//  $ gcc -DRANDOMIZE_MAIN -o randomize randomize.c
+//  $ gcc -c randomize.c
 // _buildcmd: gcc -DRANDOMIZE_MAIN -o randomize randomize.c
 //
 
@@ -39,9 +44,11 @@ int main(int argc, char *argv[]) {
 
 
 // randomize:  generate random numbers from 1 to n, each number used once
+//             store list of random numbers in a dynamically allocated array
 int *randomize(int n) {
 
-    int *list = NULL;
+    int *list = NULL;       // for returning to the callee so the app can
+                            // use
     bool *flags = NULL;
     int r = 0;
 
@@ -58,13 +65,13 @@ int *randomize(int n) {
     // number is 0
     if (n <= 0) return list;
 
-    // allocate space of n numbers
+    // allocate space of n numbers and initialize to negative number
     list = malloc(sizeof(r)*n);
     flags = malloc(sizeof(bool)*n);
     if (list == NULL) return list;
     memset(list, -1, sizeof(list[0]) * n);
     
-    // generate n random numbers;
+    // generate n random numbers
     srand(time(NULL));
     for (int i = 0; i < n; i++) {
         r = rand() % n;
@@ -87,6 +94,7 @@ int *randomize(int n) {
 }
 
 // _check:  is a number available?
+//          for internal, randomize.c use only
 static bool _check(int *list, int n, int r) {
 
     bool ret = true;
