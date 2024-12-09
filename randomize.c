@@ -7,7 +7,9 @@
 // Build:
 //  $ gcc -DRANDOMIZE_MAIN -o randomize randomize.c
 //  $ gcc -c randomize.c
-// _buildcmd: gcc -DRANDOMIZE_MAIN -o randomize randomize.c
+//
+// TODO:
+//  Clean up debug output
 //
 
 #include <stdio.h>
