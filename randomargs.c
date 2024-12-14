@@ -2,6 +2,8 @@
 //
 // Build:
 //  $ gcc -o randomargs randomargs.c aalloc.c randomize.c
+//  $ gcc -DEBUG -o randomargs randomargs.c aalloc.c randomize.c
+//
 // Run:
 //  $ ./randomargs one two three four five
 
@@ -23,11 +25,13 @@ int main(int argc, char *argv[]) {
     // save arguments to dynamic array
     if (aalloc(argc, argv) != 0) exit(1);
 
-    // print all args in correct order
+#ifdef DEBUG
+    // print starting data
+    printf("n = %d\n", n);
     for (n; n < argc; n++)
         printf("%s\n", aal_gp[n]); 
+#endif
     n--;
-    printf("n = %d\n", n);
 
     // randomize args
     rand_num_list = randomize(argc-1);
