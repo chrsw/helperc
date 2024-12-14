@@ -6,7 +6,9 @@
 //  usage example and doesn't have to be included.
 // Build:
 //  $ gcc -DRANDOMIZE_MAIN -o randomize randomize.c
+//  $ gcc -DDEBUG -DRANDOMIZE_MAIN -o randomize randomize.c
 //  $ gcc -c randomize.c
+//  $ gcc -DDEBUG -c randomize.c
 //
 // TODO:
 //  Clean up debug output
@@ -45,7 +47,7 @@ int main(int argc, char *argv[]) {
 #endif  // RANDOMIZE_MAIN
 
 
-// randomize:  generate random numbers from 1 to n, each number used once
+// randomize:  generate random numbers from 0 to n-1, each number used once
 //             store list of random numbers in a dynamically allocated array
 int *randomize(int n) {
 
@@ -77,18 +79,24 @@ int *randomize(int n) {
     srand(time(NULL));
     for (int i = 0; i < n; i++) {
         r = rand() % n;
+#ifdef DEBUG
         printf("main: \tr = %d\n", r);
         for (int j = 0; j < n; j++)
             printf("main: list[%d] = %d\n", j, list[j]);
+#endif
         // generate a new number for every n
         r = rand() % n;
+#ifdef DEBUG
         printf("\tr = %d\n", r);
+#endif
         do {
             r = rand() % n;
             sleep(1);
         } while (_check(list, n, r) == false);  // number generated already?
         list[i] = r;
+#ifdef DEBUG
         printf("main: list[%d] = %d\n", i, list[i]);
+#endif
     }
 
     free(flags);
