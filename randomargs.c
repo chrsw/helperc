@@ -1,7 +1,9 @@
-// randomargs:  print command line args in random order
+// randomargs:  print command line arguments in random order
 //
 // Build:
-// $ gcc -o randomargs randomargs.c aalloc.c
+//  $ gcc -o randomargs randomargs.c aalloc.c randomize.c
+// Run:
+//  $ ./randomargs one two three four five
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +14,7 @@
 #include "aalloc.h"
 #include "randomize.h"
 
-// print command line arguments in random order
+// print command line arguments in random order, excluding program name
 int main(int argc, char *argv[]) {
     
     int n = 0;
