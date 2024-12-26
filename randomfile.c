@@ -5,7 +5,7 @@
 //  $ gcc -DEBUG -o randomfile randomfile.c falloc.c randomize.c
 //
 // Run:
-//  $ cat file | ./randomfile
+//  $ cat rand_test.txt | ./randomfile
 //
 
 #include <stdio.h>
