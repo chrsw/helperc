@@ -1,0 +1,6 @@
+a simple text file
+to test some file processing
+applications like randomfile
+and maybe some others
+in the future
+that's all for now
