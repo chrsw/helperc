@@ -29,6 +29,10 @@ int main(int argc, char *argv[]) {
     // list of random numbers filled by randomize()
     int *rand_num_list = NULL;                       
 
+    // clean warnings
+    (void)argc;
+    (void)argv;
+
     // save file lines to dynamic array
     n = falloc(stdin);
     if (n < 0) exit(1);
