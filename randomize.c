@@ -10,9 +10,6 @@
 //  $ gcc -c randomize.c
 //  $ gcc -DDEBUG -c randomize.c
 //
-// TODO:
-//  Clean up debug output
-//
 
 #include <stdio.h>
 #include <string.h>
