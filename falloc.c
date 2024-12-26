@@ -1,5 +1,6 @@
 // falloc()     read lines of a file in to dynamically allocated arrays
-//
+//              file lines are allocated and pointed to by fal_gp (File
+//              Allocation Global Pointer)
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,10 +9,9 @@
 #include "falloc.h"
 
 
-int falloc(FILE *fp);
-
-char **fal_gp;                  // access file contents by line with this pointer
-extern char buf[BUFSIZ];        // read file lines into before before copying to array
+char **fal_gp;              // access file contents by line with this pointer.
+extern char buf[BUFSIZ];    // read file lines into before before 
+                            // copying to array.
 
 
 /* falloc: read a file into dynamically allocated arrays for every line
@@ -37,7 +37,6 @@ int falloc(FILE *fp) {
             fprintf(stderr, "%s: memory error\n", __func__);
             return -1;
         }
-        
         hap_ln = hap_new;
         hap_ln[lines] = (char *)malloc(sizeof(buf)+1);
         memcpy(hap_ln[lines], buf, sizeof(buf));
@@ -48,5 +47,3 @@ int falloc(FILE *fp) {
     return lines;
 }
 
-
-  
