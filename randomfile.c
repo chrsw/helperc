@@ -40,8 +40,8 @@ int main(int argc, char *argv[]) {
 #ifdef DEBUG
     // print starting data for debug
     printf("n = %d\n", n);
-    for (int i; i < n; i++)
-        printf("%s\n", fal_gp[n]); 
+    for (int i = 0; i < n; i++)
+        printf("%s", fal_gp[i]); 
 #endif
 
     // randomize file lines and print random order
